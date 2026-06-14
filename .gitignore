@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+data/screener_state.json
+data/run.log
+*.egg-info/
+.pytest_cache/
