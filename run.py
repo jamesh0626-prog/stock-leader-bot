@@ -8,8 +8,6 @@
 """
 import asyncio
 import logging
-import schedule
-import time
 import argparse
 from datetime import datetime
 
@@ -75,6 +73,7 @@ async def run_daily_report():
 
 def schedule_daily_report():
     """스케줄 등록 — KST 시간을 서버 로컬 시간으로 자동 변환"""
+    import schedule
     from config import DAILY_REPORT_TIME
     from zoneinfo import ZoneInfo
     import datetime
@@ -136,6 +135,7 @@ async def main_bot():
 
         logger.info("봇 실행 중... (종료: Ctrl+C)")
         while True:
+            import schedule
             schedule.run_pending()
             await asyncio.sleep(30)
 
